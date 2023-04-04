@@ -19,7 +19,7 @@ class Application(tk.Frame):
         self.pack()
         self.create_widgets()
 
-        self.ai = QandAsCB('qandas.csv')
+        self.ai = QandAsCB('C:/xampp/htdocs/python-projects/deep_thought/qandas.csv')
 
         # Create a pyttsx3 object
         self.engine = pyttsx3.init()
