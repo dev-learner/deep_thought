@@ -1,7 +1,6 @@
 # QandAsCB.py
 #
 
-
 import csv
 
 class QandAsCB:
@@ -16,9 +15,3 @@ class QandAsCB:
     def respond(self, message):
         response = self.responses.get(message.lower(), self.default_response)
         return response
-
-        # Slow down the typing
-        # for char in response:
-        #     time.sleep(random.uniform(0.1, 0.4))
-        #     yield char
-
