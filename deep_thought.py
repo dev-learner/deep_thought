@@ -1,6 +1,6 @@
 import tkinter as tk
-# import requests
-# import json
+import requests
+import json
 import sys
 
 class DeepThoughtApp:
@@ -47,18 +47,18 @@ class DeepThoughtApp:
         # self.send_webhook("Cancel selected...")
         sys.exit()
 
-    # def send_webhook(self, message):
-    #     data = {'content': message}
+    def send_webhook(self, message):
+        data = {'content': message}
 
-    #     # Webhook:Tradingview (My Server)
-    #     webhook_url1 = 'https://discord.com/api/webhooks/1083459595026051123/-H-MaBu73G3VKFAxknwuCVwjW8FplImLOGmtAeeeUQUCeI_pxUOUTg-2NP7cLgrj6fBQ'
-    #     response = requests.post(
-    #         webhook_url1, data=json.dumps(data),
-    #         headers={'Content-Type': 'application/json'}
-    #     )
+        # Webhook:Tradingview (My Server)
+        webhook_url1 = 'https://discord.com/api/webhooks/1083459595026051123/-H-MaBu73G3VKFAxknwuCVwjW8FplImLOGmtAeeeUQUCeI_pxUOUTg-2NP7cLgrj6fBQ'
+        response = requests.post(
+            webhook_url1, data=json.dumps(data),
+            headers={'Content-Type': 'application/json'}
+        )
 
-    #     if response.status_code != 204:
-    #         print("Webhook not sent successfully")
+        if response.status_code != 204:
+            print("Webhook not sent successfully")
 
     def show_message(self):
         # Disable the buttons
@@ -75,7 +75,7 @@ class DeepThoughtApp:
         )
         message_box.place(relx=0.5, rely=0.5, anchor="center")
 
-        # self.send_webhook("Gotcha message seen...")
+        self.send_webhook("Gotcha message seen...")
 
         # Schedule the message box to disappear after 5 seconds
         self.master.after(5000, self.master.destroy)
